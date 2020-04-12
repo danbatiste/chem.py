@@ -4,7 +4,7 @@ with open('elements.json', 'r') as file:
     data = file.read()
     
 elements = json.loads(data)
-moles = dict([(k, v[0]) for k, v in elements.items()])
+amu = dict([(k, v[0]) for k, v in elements.items()])
 
 # Constants
 h = 6.62607015*10**-34    ## Planck constant (J*s)
