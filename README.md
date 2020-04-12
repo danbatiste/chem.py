@@ -4,7 +4,7 @@ Python package for basic chemistry calculations.
 ```python
 >>> from chem import *
 
->>> moles["O"]
+>>> amu["O"]
 15.9994
 
 >>> N0
