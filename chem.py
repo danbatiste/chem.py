@@ -4,7 +4,16 @@ with open('elements.json', 'r') as file:
     data = file.read()
     
 elements = json.loads(data)
-amu = dict([(k, v[0]) for k, v in elements.items()])
+def atomic_mass(element):
+    global elements
+    amu_dict = dict([(k, v[0]) for k, v in elements.items()])
+    return amu_dict[element]
+
+def atomic_number(element):
+    global elements
+    an_dict = dict([(k, v[2]) for k, v in elements.items()])
+    return an_dict[element]
+
 
 # Constants
 h = 6.62607015*10**-34    ## Planck constant (J*s)
