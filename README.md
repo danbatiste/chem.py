@@ -17,6 +17,6 @@ Python package for basic chemistry calculations.
 >>> orbitals("O", charge=1)
 '1s2 2s2 2p3'
 
->>> N0
+>>> N0   ## Avagadro's number
 6.02214076e+23
 ```
