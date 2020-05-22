@@ -8,6 +8,7 @@ elements = json.loads(data)
 def isdigit(char):
     return char in "1234567890"
 
+""" Needs to be updated
 def orbitals(inpt, charge=0, output_type="include_chars"):
     """Returns the orbitals of an element.
     
@@ -48,7 +49,7 @@ def orbitals(inpt, charge=0, output_type="include_chars"):
         return formatted
     else:
         return orbital_list
-    
+"""
     
 def atomic_mass(element, atom=False):
     """Returns the atomic mass given an element's symbol."""
