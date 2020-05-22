@@ -8,7 +8,6 @@ elements = json.loads(data)
 def isdigit(char):
     return char in "1234567890"
 
-""" Needs to be updated
 def orbitals(inpt, charge=0, output_type="include_chars"):
     """Returns the orbitals of an element.
     
@@ -49,7 +48,7 @@ def orbitals(inpt, charge=0, output_type="include_chars"):
         return formatted
     else:
         return orbital_list
-"""
+    
     
 def atomic_mass(element, atom=False):
     """Returns the atomic mass given an element's symbol."""
@@ -60,13 +59,13 @@ def atomic_mass(element, atom=False):
     else:
         # Loop over molecule, break into parts
         parts = []
-        current_part = ["",1] # ex: ["Mn", 3]
+        current_part = ["",""] # ex: ["Mn", 3]
         for i, c in enumerate(element):
             if isdigit(c):
-                current_part[1] = int(c)
+                current_part[1] += c
                 if i==len(element)-1 or not isdigit(element[i+1]):
                     parts += [current_part]
-                    current_part = ["",1]
+                    current_part = ["",""]
                 next
             if not isdigit(c) and c==c.upper():
                 current_part[0] += c
@@ -74,7 +73,7 @@ def atomic_mass(element, atom=False):
                 pass_cond = pass_cond or ((not isdigit(element[i+1])) and element[i+1] == element[i+1].upper())
                 if pass_cond:
                     parts += [current_part]
-                    current_part = ["",1]
+                    current_part = ["",""]
                 next
             if not isdigit(c) and c==c.lower():
                 current_part[0] += c
@@ -82,10 +81,16 @@ def atomic_mass(element, atom=False):
                 pass_cond = pass_cond or ((not isdigit(element[i+1])) and element[i+1] == element[i+1].upper())
                 if pass_cond:
                     parts += [current_part]
-                    current_part = ["",1]
+                    current_part = ["",""]
                 next
         total_amu = 0
+        #print("Parts: ",parts)
+        #print("Cpart: ",current_part)
         for part in parts:
+            if part[1] == "":
+                part[1] = 1
+            else:
+                part[1] = int(part[1])
             total_amu += part[1]*atomic_mass(part[0],atom=True)
         return total_amu
 
@@ -95,10 +100,6 @@ def atomic_number(element, molecule=False):
     an_dict = dict([(k, v[2]) for k, v in elements.items()])
     return an_dict[element]
 
-            
-
-# molma("CHO", [6,12,6]) -> 
-# molma = lambda letters, nums: sum([n*amu(l) for l,n in zip(letters, nums)])
 
 
 # Constants
