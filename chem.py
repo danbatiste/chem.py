@@ -8,14 +8,15 @@ elements = json.loads(data)
 def isdigit(char):
     return char in "1234567890"
 
+""" Contains errors
 def orbitals(inpt, charge=0, output_type="include_chars"):
-    """Returns the orbitals of an element.
-    
-    inpt: The input, as either a number (34) or an element ("Se")
-    ion: Adds charges to the input.
-    output_type: "raw", "include_chars", or "numbers".
-        - Default: "include_chars"
-    """
+    \"""Returns the orbitals of an element.
+    #
+    #inpt: The input, as either a number (34) or an element ("Se")
+    #ion: Adds charges to the input.
+    #output_type: "raw", "include_chars", or "numbers".
+    #    - Default: "include_chars"
+    \"""
     ## Overloads the function
     if type(inpt) == str:
         electron_num = atomic_number(inpt)
@@ -48,7 +49,7 @@ def orbitals(inpt, charge=0, output_type="include_chars"):
         return formatted
     else:
         return orbital_list
-    
+"""
     
 def atomic_mass(element, atom=False):
     """Returns the atomic mass given an element's symbol."""
