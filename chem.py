@@ -92,7 +92,7 @@ def molar_mass(element, atom=False):
                 part[1] = 1
             else:
                 part[1] = int(part[1])
-            total_amu += part[1]*atomic_mass(part[0],atom=True)
+            total_amu += part[1]*molar_mass(part[0],atom=True)
         return total_amu
 
 def atomic_number(element, molecule=False):
