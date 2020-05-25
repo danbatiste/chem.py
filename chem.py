@@ -51,7 +51,7 @@ def orbitals(inpt, charge=0, output_type="include_chars"):
         return orbital_list
 """
     
-def atomic_mass(element, atom=False):
+def molar_mass(element, atom=False):
     """Returns the atomic mass given an element's symbol."""
     global elements
     if atom:
